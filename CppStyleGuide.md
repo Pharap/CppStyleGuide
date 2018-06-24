@@ -1,14 +1,14 @@
 # Pharap's C++ Style Guide
 
-### Use allman brace style
+## Use allman brace style
 
-###### Rationale
+### Rationale
 
 It's easier to spot matching brace pairs at a glance when braces are vertically aligned.
 The length of the statement header doesn't affect where the opening brace is placed.
 Braces stand out better when they're alone on a line.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -84,16 +84,16 @@ int main(void)
 </p>
 </details>
 
-### Use tabs for indenting
+## Use tabs for indenting
 
-###### Rationale
+### Rationale
 
 It takes longer to tap the space bar multiple times than it does to tap the tab key once.
 It takes longer to tap the backspace button multiple times to delete spaces than it does to tap it once to delete a tab.
 (The tab key was actually [invented to solve that issue](https://en.wikipedia.org/wiki/Tab_key#History).)
 Tabs can often be configured to display at different widths, thus catering to people who prefer both small indents and people who prefer large indents.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -157,14 +157,14 @@ int main(void)
 </p>
 </details>
 
-### No more than one assignment per line
+## No more than one assignment per line
 
-###### Rationale
+### Rationale
 
 Having multiple assignments per line forces the programmer to stop and think about the order of assignment.
 By having just one assignment per line, assignments become more obvious and can be understood at a glance.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -182,14 +182,14 @@ blue = 0;
 </p>
 </details>
 
-### No more than one statement per line
+## No more than one statement per line
 
-###### Rationale
+### Rationale
 
 Having multiple statements per line makes it harder to skim-read code because a programmer must stop and read every statement on the line.
 By having just one statement per line, it's easier to skim-read code and code reads as if it were a clear list of instructions.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -218,15 +218,15 @@ const int value = ++i + ++j;
 </p>
 </details>
 
-### No more than one variable definition per line
+## No more than one variable definition per line
 
-###### Rationale
+### Rationale
 
 Having multiple variable definitions makes it harder to skim-read code because a programmer must stop and read every variable on the line.
 By having just one variable definition per line, the variables are clearly listed along with their type so it's harder to miss a variable or type when skim-reading code.
 Having multiple variable definitions per line can also cause confusion when it comes to defining pointers and references.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -249,15 +249,15 @@ int value = 0, *pointer = &value, &reference = value
 </p>
 </details>
 
-### Leave spaces around the pointer symbol when defining pointer variables
+## Leave spaces around the pointer symbol when defining pointer variables
 
-###### Rationale
+### Rationale
 
 Some people like to think of the pointer as part of the type because pointers are considered to be types in most contexts.
 Some people like to think of the pointer as part of the variable because of the strange rule when declaring more than one variable per line.
 This is an example of C++'s constext sensitivity.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -281,15 +281,15 @@ int *pointer = &value;
 </p>
 </details>
 
-### Leave spaces around the reference symbol when defining reference variables
+## Leave spaces around the reference symbol when defining reference variables
 
-###### Rationale
+### Rationale
 
 Some people like to think of the reference as part of the type because references are considered to be types in most contexts.
 Some people like to think of the reference as part of the variable because of the strange rule when declaring more than one variable per line.
 This is an example of C++'s constext sensitivity.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -313,14 +313,14 @@ int &reference = value;
 </p>
 </details>
 
-### Leave spaces around binary operators (except `->` and `.`)
+## Leave spaces around binary operators (except `->` and `.`)
 
-###### Rationale
+### Rationale
 
 Leaving spaces around operators makes the presence of the operators easier to spot and makes it easy to discern binary operators from unary operators.
 (i.e. a bitwise and cannot be mistaken for taking the address of a variable, a subtraction cannot be mistaken for a negation and a multiplication cannot be mistaken for a pointer dereference.)
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -340,9 +340,9 @@ float yNormal = y/magnitude;
 </p>
 </details>
 
-### Use preincrement and predecrement, avoid postincrement and postdecrement
+## Use preincrement and predecrement, avoid postincrement and postdecrement
 
-###### Rationale
+### Rationale
 
 Increment and decrement are mutating operations - they alter the value of an lvalue expression.
 By putting the mutating operation earlier, it becomes more obvious.
@@ -353,7 +353,7 @@ Good compilers will optimise away the copy, but that optimisation is not perform
 Lastly, C++'s concept of iterators specifies the expression `++iterator` but not the expression `iterator++`, i.e. iterators are not required to implement postincrement but are required to implement preincrement.
 The concept of input iterators specifies that the expression `*iterator++` must be valid, but defines it in terms of `++iterator`, whilst it makes no mention of the validity of `iterator++` other than `(void)iterator++` must be valid and equivalent to `(void)++iterator`.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -373,16 +373,16 @@ for(size_t i = 0; i < array.size(); i++)
 </p>
 </details>
 
-### Use `size_t` for indices, not `int`
+## Use `size_t` for indices, not `int`
 
-###### Rationale
+### Rationale
 
 `size_t` is the canonical type for dealing with memory indexing.
 On certain processors, unsigned numbers perform better.
 
 Note that there are some cases where using `size_t` instead of `int` can introduce bugs, such as interating backwards and forgetting to check if a collection type is empty.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -403,9 +403,9 @@ for(int i = 0; i < array.size(); ++i)
 </p>
 </details>
 
-### Don't use C style casts
+## Don't use C style casts
 
-###### Rationale
+### Rationale
 
 When using C style casts it is possible to accidentally cast away a `const` qualifier without intending to, which can change the semantics of the code.
 When using C++ style casts, one would have to explicitly use `const_cast` to remove a `const` qualifier, thus it's much harder to remove by accident.
@@ -413,7 +413,7 @@ When using C++ style casts, one would have to explicitly use `const_cast` to rem
 When using C style casts it is possible to make unintended type conversions, for example converting an `int *` to a `float *`.
 When using C++ style casts, `static_cast` will forbid this conversion at compile time, whilst `reinterpret_cast` will allow it, hence C++ style casts give a greater indication of whether a conversion was actually intended as well as signalling a relative degree of danger.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
@@ -424,15 +424,15 @@ When using C++ style casts, `static_cast` will forbid this conversion at compile
 </p>
 </details>
 
-### Be explicit with casting
+## Be explicit with casting
 
-###### Rationale
+### Rationale
 
 Many implicit conversions can lead to hard to hard to spot bugs.
 Implict conversion between signed and unsigned types is one of the most notable of these.
 Using explicit casts makes the conversion easier to spot and makes it clear that the type conversion was intentional.
 
-###### Examples
+### Examples
 
 <details><summary>Examples</summary>
 <p>
