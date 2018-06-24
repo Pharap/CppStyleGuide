@@ -11,6 +11,7 @@ Braces stand out better when they're alone on a line.
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 int main(void)
@@ -80,6 +81,7 @@ int main(void)
 	
 	std::cout << total; }
 ```
+
 </details>
 
 ## Use tabs for indenting
@@ -94,6 +96,7 @@ Tabs can often be configured to display at different widths, thus catering to pe
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 int main(void)
@@ -151,6 +154,7 @@ int main(void)
   std::cout << total;
 }
 ```
+
 </details>
 
 ## No more than one assignment per line
@@ -163,6 +167,7 @@ By having just one assignment per line, assignments become more obvious and can 
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Bad**
 ```cpp
 red = green = blue = 0;
@@ -174,6 +179,7 @@ red = 0;
 green = 0;
 blue = 0;
 ```
+
 </details>
 
 ## No more than one statement per line
@@ -186,6 +192,7 @@ By having just one statement per line, it's easier to skim-read code and code re
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 const int value = array[i];
@@ -208,6 +215,7 @@ const int value = i + j;
 ```cpp
 const int value = ++i + ++j;
 ```
+
 </details>
 
 ## No more than one variable definition per line
@@ -221,6 +229,7 @@ Having multiple variable definitions per line can also cause confusion when it c
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 int value = 0;
@@ -237,6 +246,7 @@ int value = 0, * pointer = &value, & reference = value
 ```cpp
 int value = 0, *pointer = &value, &reference = value
 ```
+
 </details>
 
 ## Leave spaces around the pointer symbol when defining pointer variables
@@ -250,6 +260,7 @@ This is an example of C++'s constext sensitivity.
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 int value = 0;
@@ -267,6 +278,7 @@ int* pointer = &value;
 int value = 0;
 int *pointer = &value;
 ```
+
 </details>
 
 ## Leave spaces around the reference symbol when defining reference variables
@@ -280,6 +292,7 @@ This is an example of C++'s constext sensitivity.
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 int value = 0;
@@ -297,6 +310,7 @@ int& reference = value;
 int value = 0;
 int &reference = value;
 ```
+
 </details>
 
 ## Leave spaces around binary operators (except `->` and `.`)
@@ -309,6 +323,7 @@ Leaving spaces around operators makes the presence of the operators easier to sp
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 float magnitude = std::sqrt((x * x) + (y * y));
@@ -322,6 +337,7 @@ int magnitude = std::sqrt((x*x)+(y*y));
 float xNormal = x/magnitude;
 float yNormal = y/magnitude;
 ```
+
 </details>
 
 ## Use preincrement and predecrement, avoid postincrement and postdecrement
@@ -340,6 +356,7 @@ The concept of input iterators specifies that the expression `*iterator++` must 
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 // Mutating operation is given precidence
@@ -353,6 +370,7 @@ for(size_t i = 0; i < array.size(); ++i)
 for(size_t i = 0; i < array.size(); i++)
 	array[i]++;
 ```
+
 </details>
 
 ## Use `size_t` for indices, not `int`
@@ -367,6 +385,7 @@ Note that there are some cases where using `size_t` instead of `int` can introdu
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 // No warnings, no errors
@@ -381,6 +400,7 @@ for(size_t i = 0; i < array.size(); ++i)
 for(int i = 0; i < array.size(); ++i)
 	array[i] += 2;
 ```
+
 </details>
 
 ## Don't use C style casts
@@ -396,10 +416,12 @@ When using C++ style casts, `static_cast` will forbid this conversion at compile
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 // TBC
 ```
+
 </details>
 
 ## Be explicit with casting
@@ -413,6 +435,7 @@ Using explicit casts makes the conversion easier to spot and makes it clear that
 ### Examples
 
 <details><summary>Examples</summary>
+
 **Good**
 ```cpp
 // Intent is clear
@@ -426,5 +449,6 @@ std::uint8_t b = static_cast<uint8_t>(a);
 std::int8_t a = -5;
 std::uint8_t b = a;
 ```
+
 </details>
 
