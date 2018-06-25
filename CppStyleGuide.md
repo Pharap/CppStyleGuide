@@ -9,7 +9,7 @@ The length of the statement header doesn't affect where the opening brace is pla
 Braces stand out better when they're alone on a line.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -94,7 +94,7 @@ Tabs can often be configured to display at different widths,
 thus catering to people who prefer both small indents and people who prefer large indents.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -166,7 +166,7 @@ Having a space before the bracket also gives the appearance that the contents of
 Furthermore, the appearance of a space before brackets after keywords can be quite visually jarring when juxtaposed with function calls that have no spaces before the brackets.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -193,7 +193,7 @@ Comments above a statement are easier to spot when skim-reading.
 Comments above a statement can span several lines.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -220,7 +220,7 @@ Having multiple assignments per line forces the programmer to stop and think abo
 By having just one assignment per line, assignments become more obvious and can be understood at a glance.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Bad**
 ```cpp
@@ -244,7 +244,7 @@ Having multiple statements per line makes it harder to skim-read code because a 
 By having just one statement per line, it's easier to skim-read code and code reads as if it were a clear list of instructions.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -280,7 +280,7 @@ By having just one variable definition per line, the variables are clearly liste
 Having multiple variable definitions per line can also cause confusion when it comes to defining pointers and references.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -310,7 +310,7 @@ Some people like to think of the pointer as part of the variable because of the 
 This is an example of C++'s constext sensitivity.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -341,7 +341,7 @@ Some people like to think of the reference as part of the variable because of th
 This is an example of C++'s constext sensitivity.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -374,7 +374,7 @@ Leaving spaces around operators makes the presence of the operators easier to sp
 a subtraction cannot be mistaken for a negation and a multiplication cannot be mistaken for a pointer dereference.)  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -408,7 +408,7 @@ The concept of input iterators specifies that the expression `*iterator++` must 
 whilst it makes no mention of the validity of `iterator++` other than `(void)iterator++` must be valid and equivalent to `(void)++iterator`.
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -439,7 +439,7 @@ When using C++ style casts, `static_cast` will forbid this conversion at compile
 hence C++ style casts give a greater indication of whether a conversion was actually intended as well as signalling a relative degree of danger.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -457,7 +457,7 @@ Implict conversion between signed and unsigned types is one of the most notable 
 Using explicit casts makes the conversion easier to spot and makes it clear that the type conversion was intentional.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -488,7 +488,7 @@ Note that there are some cases where using `size_t` instead of `int` can introdu
 such as interating backwards and forgetting to check if a collection type is empty.  
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
@@ -519,7 +519,7 @@ Hence it's better to use `'\n'`, unless flushing is desired,
 e.g. if the line needs to be shown immediately or it is the last line.
 
 <details>
-<summary><strong>Examples<strong></summary>
+<summary><strong>Examples</strong></summary>
 
 **Good**
 ```cpp
