@@ -1,6 +1,6 @@
 # Pharap's C++ Style Guide
 
-## Use allman brace style
+## Use Allman brace style
 
 ### Rationale
 
@@ -8,10 +8,8 @@ It's easier to spot matching brace pairs at a glance when braces are vertically 
 The length of the statement header doesn't affect where the opening brace is placed.  
 Braces stand out better when they're alone on a line.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -95,10 +93,8 @@ It takes longer to tap the backspace button multiple times to delete spaces than
 Tabs can often be configured to display at different widths,  
 thus catering to people who prefer both small indents and people who prefer large indents.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -169,10 +165,8 @@ thus placing an extra space between keywords such as `if`, `for` and `while` and
 Having a space before the bracket also gives the appearance that the contents of the brackets are being kept disjoint from the keywords for some reason, which can be misleading.  
 Furthermore, the appearance of a space before brackets after keywords can be quite visually jarring when juxtaposed with function calls that have no spaces before the brackets.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -198,10 +192,8 @@ Lines of code can sometimes be quite long, which can lead to comments being cut 
 Comments above a statement are easier to spot when skim-reading.  
 Comments above a statement can span several lines.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -227,10 +219,8 @@ for (int i = 0; i < 10; ++i) // Print all even numbers between 0 to 9 inclusive
 Having multiple assignments per line forces the programmer to stop and think about the order of assignment.  
 By having just one assignment per line, assignments become more obvious and can be understood at a glance.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Bad**
 ```cpp
@@ -253,10 +243,8 @@ blue = 0;
 Having multiple statements per line makes it harder to skim-read code because a programmer must stop and read every statement on the line.  
 By having just one statement per line, it's easier to skim-read code and code reads as if it were a clear list of instructions.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -291,10 +279,8 @@ Having multiple variable definitions makes it harder to skim-read code because a
 By having just one variable definition per line, the variables are clearly listed along with their type so it's harder to miss a variable or type when skim-reading code.  
 Having multiple variable definitions per line can also cause confusion when it comes to defining pointers and references.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -323,10 +309,8 @@ Some people like to think of the pointer as part of the type because pointers ar
 Some people like to think of the pointer as part of the variable because of the strange rule when declaring more than one variable per line.  
 This is an example of C++'s constext sensitivity.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -356,10 +340,8 @@ Some people like to think of the reference as part of the type because reference
 Some people like to think of the reference as part of the variable because of the strange rule when declaring more than one variable per line.  
 This is an example of C++'s constext sensitivity.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -391,10 +373,8 @@ Leaving spaces around operators makes the presence of the operators easier to sp
 (i.e. a bitwise and cannot be mistaken for taking the address of a variable,  
 a subtraction cannot be mistaken for a negation and a multiplication cannot be mistaken for a pointer dereference.)  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -427,10 +407,8 @@ i.e. iterators are not required to implement postincrement but are required to i
 The concept of input iterators specifies that the expression `*iterator++` must be valid, but defines it in terms of `++iterator`,  
 whilst it makes no mention of the validity of `iterator++` other than `(void)iterator++` must be valid and equivalent to `(void)++iterator`.
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -460,10 +438,8 @@ for example converting an `int *` to a `float *`.
 When using C++ style casts, `static_cast` will forbid this conversion at compile time, whilst `reinterpret_cast` will allow it,  
 hence C++ style casts give a greater indication of whether a conversion was actually intended as well as signalling a relative degree of danger.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -480,10 +456,8 @@ Many implicit conversions can lead to hard to hard to spot bugs.
 Implict conversion between signed and unsigned types is one of the most notable of these.  
 Using explicit casts makes the conversion easier to spot and makes it clear that the type conversion was intentional.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -513,10 +487,8 @@ On certain processors, unsigned numbers perform better.
 Note that there are some cases where using `size_t` instead of `int` can introduce bugs,  
 such as interating backwards and forgetting to check if a collection type is empty.  
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
@@ -546,10 +518,8 @@ which can have a big negative impace on performance.
 Hence it's better to use `'\n'`, unless flushing is desired,
 e.g. if the line needs to be shown immediately or it is the last line.
 
-### Examples
-
 <details>
-<summary>Examples</summary>
+<summary>**Examples**</summary>
 
 **Good**
 ```cpp
